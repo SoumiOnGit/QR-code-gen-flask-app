@@ -12,7 +12,7 @@
     </form>
     {% if qr_code %}
         <h2>Generated QR Code:</h2>
-        <img src="{{ qr_code }}" alt="QR Code">
+        <img src="{{url_for('static', filename='/images/qr_code.png')}}" alt="QR Code">
     {% endif %}
 </body>
 </html>

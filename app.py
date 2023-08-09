@@ -19,11 +19,12 @@ def generate_qr_code():
             qr.make(fit=True)
             img = qr.make_image(fill_color="black", back_color="white")
 
-            img_io = BytesIO()
-            img.save(img_io, "PNG")
-            img_io.seek(0)
 
-            return send_file(img_io, mimetype="image/png")
+            # the above 3 lines of code can be replaced with the following line of code
+            img.save("./static/images/qr_code.png")
+
+            return render_template("index.html",qr_code=True)
+    
 
     return render_template("index.html")
 
